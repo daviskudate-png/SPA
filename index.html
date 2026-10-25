@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary Web Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Dictionary App</h1>
+            <p>Search for a word to discover its meaning.</p>
+        </header>
+        <form id="search-form">
+            <label for="search-input">Enter a word</label>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search for a word..." aria-label="Enter a word to search" required>
+                <button type="submit">Search</button>
+            </div>
+        </form>
+        <p id="status" role="status" aria-live="polite"></p>
+        <section id="results" aria-label="Dictionary results" hidden>
+            <h2 id="word"></h2>
+            <p id="phonetic"></p>
+            <button type="button" id="audio-button" aria-label="Play word pronunciation" hidden>Listen to pronunciation</button>
+            <audio id="audio"></audio>
+            <article>
+                <h3>Definition</h3>
+                <p id="definition"></p>
+            </article>
+            <article>
+                <h3>Synonyms</h3>
+                <ul id="synonyms"></ul>
+            </article>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
