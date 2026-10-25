@@ -28,8 +28,8 @@ form.addEventListener("submit", async function (event) {
 
     try {
         const response = await fetch(
-            `https://api.dictionaryapi.dev/api/v2/entries/en/<word>`
-        );
+                `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+);
 
         if (!response.ok) {
             throw new Error("Word not found");
@@ -55,7 +55,7 @@ form.addEventListener("submit", async function (event) {
             : "No definition available";
         const allSynonyms = meanings.flatMap(meaning => [
             ...(meaning.synonyms || []),
-            ...meaning.definitions.flatMap(
+            ...(meaning.definitions|| []).flatMap(
                 definition => definition.synonyms || []
             )
         ]);
